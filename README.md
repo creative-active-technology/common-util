@@ -1,7 +1,6 @@
 Common-Util
 ===========
 ### Common Util - List of Library
-
 - External Library createk common-login
 - External Library com.google.guava
 - External Library apache commons-validator
@@ -18,6 +17,4 @@ Common-Util
 - DateTimeUtil
 - NumberFormatter
 - ...
-
-Deni Husni Fahri Rizal (Optimus Prime)
 
