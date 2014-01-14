@@ -14,7 +14,22 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <springframework-version>3.2.6.RELEASE</springframework-version>
     </properties>
-
+    <developers>
+        <developer>
+            <name>Aditya Arya Prawisnara</name>
+            <roles>
+                <role>Project Owner</role>
+                <role>Business Analyst</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Deni Husni Fahri Rizal</name>
+            <roles>
+                <role>Developer Head</role>
+                <role>System Analyst</role>
+            </roles>
+        </developer>
+    </developers>
     <dependencies>
         <dependency>
             <groupId>com.createk</groupId>
