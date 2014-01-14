@@ -1,7 +1,7 @@
-common-util
+Common-Util
 ===========
+### Common Util - List of Library
 
-Common Util - Aktiv Kreativ Teknologi
 - External Library com.google.guava
 - External Library apache commons-validator
 - External Library apache commons-io
@@ -12,6 +12,11 @@ Common Util - Aktiv Kreativ Teknologi
 - External Library spring-context
 - External Library joda-time
 
+### Common Util - List of Class
+- CommonUtilConstant
+- DateTimeUtil
+- NumberFormatter
+- ...
 
 Deni Husni Fahri Rizal (Optimus Prime)
 
