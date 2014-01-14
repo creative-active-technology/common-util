@@ -14,13 +14,14 @@ import java.util.Locale;
  * Number and vice versa. Managed by Spring.
  *
  * @author Deni Husni Fahri Rizal
- *@version 1
+ * @version 1
  * @since 14 January 2014
  * <p>
  * minFractionDigit total minimum digit</P>
  * <p>
  * maxFractionDigit total maximum digit</p>
- * <p>defaultLocale default local where the application running, see
+ * <p>
+ * defaultLocale default local where the application running, see
  * application.properties activeLocale active locale. locale that used by
  * application, get locale from local session or application session
  *
