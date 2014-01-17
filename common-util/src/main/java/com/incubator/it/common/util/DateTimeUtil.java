@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.createk.common.util;
+package com.incubator.it.common.util;
 
-import com.createk.common.CommonUtilConstant;
+import com.incubator.it.common.CommonUtilConstant;
 import java.util.Date;
 import org.apache.commons.lang3.time.DateUtils;
 import org.joda.time.DateMidnight;
@@ -45,7 +45,7 @@ public class DateTimeUtil {
      * <li>CommonUtilConstant.DATE_FORMAT_YEAR = year</li>
      * </ul>
      *
-     * @return Date result of past or future date
+     * @return Date type of past or future date
      * @param inputParam Date reference to calculate
      * @param timeDifference Integer reference, can be negative value like -1 or
      * positive value like 7
@@ -81,8 +81,8 @@ public class DateTimeUtil {
     }
 
     /**
-     * Checking from two date objects, will return true if the date have the
-     * same value.
+     * Checking from two date type, will return true if the date have the
+     * same value, same date not same time.
      *
      * @return Boolean
      * @param date1 Date reference
@@ -94,7 +94,7 @@ public class DateTimeUtil {
 
     /**
      * Checking from two date objects ( included time ), will return true if the
-     * date have the same value.
+     * date have the same value and same time instance.
      *
      * @return Boolean
      * @param date1 Date reference
@@ -106,20 +106,20 @@ public class DateTimeUtil {
     }
 
     /**
-     * get total times (Age) based on parameter date
+     * get total times (Age) based on date parameter
      *
-     * @param birthdate input date type
-     * @return Integer
+     * @param birthDate input date type
+     * @return Integer age that calculate from today
      */
-    public static Integer getAge(Date birthdate) {
-        DateMidnight date1 = new DateMidnight(birthdate);
+    public static Integer getAge(Date birthDate) {
+        DateMidnight date1 = new DateMidnight(birthDate);
         DateTime now = new DateTime();
         Years years = Years.yearsBetween(date1, now);
         return years.getYears();
     }
 
     /**
-     * get total days, between two date object
+     * get total days difference, between two date type
      *
      * @return Integer
      * @param date1 Date reference
@@ -131,7 +131,7 @@ public class DateTimeUtil {
     }
 
     /**
-     * get total Months, between two date object
+     * get total months difference, between two date type
      *
      * @return Integer
      * @param date1 Date reference
@@ -143,7 +143,7 @@ public class DateTimeUtil {
     }
 
     /**
-     * get total years, between two date object
+     * get total years difference, between two date type
      *
      * @return Integer
      * @param date1 Date reference
@@ -156,30 +156,30 @@ public class DateTimeUtil {
     /**
      * get total working days
      *
-     * @param startDate
+     * @param startDate Date reference
      * @return Integer
      * @param endDate Date reference
-     * @param totalPublicHoliday, total of public holiday
+     * @param totalPublicHoliday, total of public holiday in target country
      * @param totalAnnualLeave, total of annual leave
      */
     public static Integer getTotalWorkingDay(Date startDate, Date endDate, int totalPublicHoliday, int totalAnnualLeave) {
         DateTime start = new DateTime(startDate);
         DateTime end = new DateTime(endDate);
-        int satSunCount = 0;
-        int numOfDays = 0;
+        int saturdayAndSundayCount = 0;
+        int totalDaysInYear = 0;
         DateTime iterate = start;
         if (iterate.getDayOfWeek() == 6 | iterate.getDayOfWeek() == 7) {
-            ++satSunCount;
+            ++saturdayAndSundayCount;
         }
-        ++numOfDays;
+        ++totalDaysInYear;
         while (!iterate.isEqual(end)) {
-            ++numOfDays;
+            ++totalDaysInYear;
             iterate = iterate.plusDays(1);
             if (iterate.getDayOfWeek() == 6 | iterate.getDayOfWeek() == 7) {
-                ++satSunCount;
+                ++saturdayAndSundayCount;
             }
         }
-        int workingDays = numOfDays - satSunCount;
+        int workingDays = totalDaysInYear - saturdayAndSundayCount;
         int totalWorkingDays = workingDays - totalAnnualLeave - totalPublicHoliday;
         return totalWorkingDays;
     }

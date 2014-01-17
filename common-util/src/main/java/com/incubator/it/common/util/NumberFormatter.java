@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.createk.common.util;
+package com.incubator.it.common.util;
 
-import com.createk.common.CommonUtilConstant;
+import com.incubator.it.common.CommonUtilConstant;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
