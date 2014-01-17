@@ -10,8 +10,9 @@ import java.text.ParseException;
 import java.util.Locale;
 
 /**
- * NumberFormatter, a class with function is to format and parse from String to
- * Number and vice versa. Managed by Spring.
+ * NumberFormatter, a class with function is to format and parse from String type to
+ * Number and vice versa.
+ * Note this class managed by Spring.
  *
  * @author Deni Husni Fahri Rizal
  * @version 1
@@ -22,9 +23,17 @@ import java.util.Locale;
  * maxFractionDigit total maximum digit</p>
  * <p>
  * defaultLocale default local where the application running, see
- * application.properties activeLocale active locale. locale that used by
+ * application.properties.
+ * Locale is active locale that used by
  * application, get locale from local session or application session
  *
+ * <p>
+ * typeInstance - Type number format</p>
+ * <ul>
+ * <li>CommonUtilConstant.NUMBER_FORMAT_CURRENCY_TYPE=currency</li>
+ * <li>CommonUtilConstant.NUMBER_FORMAT_NUMBER_TYPE=number</li>
+ * <li>CommonUtilConstant.NUMBER_FORMAT_PERCENT_TYPE=percent</li>
+ * </ul>
  */
 public class NumberFormatter {
 
@@ -65,20 +74,20 @@ public class NumberFormatter {
      * <p>
      * typeInstance - Type number format</p>
      * <ul>
-     * <li>number</li>
-     * <li>currency</li>
-     * <li>percent</li>
+     * <li>CommonUtilConstant.NUMBER_FORMAT_CURRENCY_TYPE=currency</li>
+     * <li>CommonUtilConstant.NUMBER_FORMAT_NUMBER_TYPE=number</li>
+     * <li>CommonUtilConstant.NUMBER_FORMAT_PERCENT_TYPE=percent</li>
      * </ul>
      *
      * @return String number format
-     * @param number number reference
+     * @param inputNumber number reference
      * @param typeInstance type of number format
      */
-    public String getNumberAsStringDefaultLocale(Number number, String typeInstance) {
+    public String getNumberAsStringDefaultLocale(Number inputNumber, String typeInstance) {
         NumberFormat nf = getNumberFormat(typeInstance, new Locale(defaultLocale));
         nf.setMaximumFractionDigits(maxFractionDigit);
         nf.setMinimumFractionDigits(minFractionDigit);
-        return nf.format(number);
+        return nf.format(inputNumber);
     }
 
     /**
@@ -96,15 +105,15 @@ public class NumberFormatter {
      * </ul>
      *
      * @return String number format
-     * @param number number reference
+     * @param inputNumber number reference
      * @param locale Locale reference
      * @param typeInstance type of number format
      */
-    public String getNumberAsStringActiveLocale(Number number, Locale locale, String typeInstance) {
+    public String getNumberAsStringActiveLocale(Number inputNumber, Locale locale, String typeInstance) {
         NumberFormat nf = getNumberFormat(typeInstance, locale);
         nf.setMaximumFractionDigits(maxFractionDigit);
         nf.setMinimumFractionDigits(minFractionDigit);
-        return nf.format(number);
+        return nf.format(inputNumber);
     }
 
     /**
@@ -116,14 +125,15 @@ public class NumberFormatter {
      * <p>
      * typeInstance - Type number format</p>
      * <ul>
-     * <li>number</li>
-     * <li>currency</li>
-     * <li>percent</li>
+     * <li>CommonUtilConstant.NUMBER_FORMAT_CURRENCY_TYPE=currency</li>
+     * <li>CommonUtilConstant.NUMBER_FORMAT_NUMBER_TYPE=number</li>
+     * <li>CommonUtilConstant.NUMBER_FORMAT_PERCENT_TYPE=percent</li>
      * </ul>
      *
      * @return Number number format
-     * @param number number reference
+     * @param inputNumber number reference
      * @param typeInstance type of number format
+     * @throws java.text.ParseException
      */
     public Number getNumberDefaultLocale(String inputNumber, String typeInstance) throws ParseException {
         NumberFormat nf = getNumberFormat(typeInstance, new Locale(defaultLocale));
@@ -141,15 +151,16 @@ public class NumberFormatter {
      * <p>
      * typeInstance - Type number format</p>
      * <ul>
-     * <li>number</li>
-     * <li>currency</li>
-     * <li>percent</li>
+     * <li>CommonUtilConstant.NUMBER_FORMAT_CURRENCY_TYPE=currency</li>
+     * <li>CommonUtilConstant.NUMBER_FORMAT_NUMBER_TYPE=number</li>
+     * <li>CommonUtilConstant.NUMBER_FORMAT_PERCENT_TYPE=percent</li>
      * </ul>
      *
      * @return String number format
-     * @param number number reference
+     * @param inputNumber number reference
      * @param locale Locale reference
      * @param typeInstance type of number format
+     * @throws java.text.ParseException
      */
     public Number getNumberActiveLocale(String inputNumber, Locale locale, String typeInstance) throws ParseException {
         NumberFormat nf = getNumberFormat(typeInstance, locale);
@@ -158,6 +169,21 @@ public class NumberFormatter {
         return nf.parse(inputNumber);
     }
 
+    /**
+     * <p>
+     * Get instance class of Number Formatter with specific Locale and number format type</p>
+     * <p>
+     * typeInstance - Type number format</p>
+     * <ul>
+     * <li>CommonUtilConstant.NUMBER_FORMAT_CURRENCY_TYPE=currency</li>
+     * <li>CommonUtilConstant.NUMBER_FORMAT_NUMBER_TYPE=number</li>
+     * <li>CommonUtilConstant.NUMBER_FORMAT_PERCENT_TYPE=percent</li>
+     * </ul>
+     *
+     * @return String number format
+     * @param locale Locale reference
+     * @param typeInstance type of number format
+     */
     private NumberFormat getNumberFormat(String typeInstance, Locale locale) {
         NumberFormat nf = null;
         if (typeInstance.equalsIgnoreCase(CommonUtilConstant.NUMBER_FORMAT_NUMBER_TYPE)) {
