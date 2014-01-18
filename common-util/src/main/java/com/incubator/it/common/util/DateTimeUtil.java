@@ -20,7 +20,7 @@ import org.joda.time.Years;
  * @version 1
  * @since 14 January 2014
  */
-public class DateTimeUtil {
+class DateTimeUtil {
 
     /**
      * <p>
@@ -149,7 +149,7 @@ public class DateTimeUtil {
      * @param date1 Date reference
      * @param date2 Date reference
      */
-    public static Integer getToalYearDifference(Date date1, Date date2) {
+    public static Integer getTotalYearDifference(Date date1, Date date2) {
         return Years.yearsBetween(new DateMidnight(date1), new DateMidnight(date2)).getYears();
     }
 
@@ -180,7 +180,7 @@ public class DateTimeUtil {
             }
         }
         int workingDays = totalDaysInYear - saturdayAndSundayCount;
-        int totalWorkingDays = workingDays - totalAnnualLeave - totalPublicHoliday;
-        return totalWorkingDays;
+        Integer totalWorkingDay = workingDays - totalAnnualLeave - totalPublicHoliday;
+        return totalWorkingDay;
     }
 }

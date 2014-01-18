@@ -35,7 +35,7 @@ import java.util.Locale;
  * <li>CommonUtilConstant.NUMBER_FORMAT_PERCENT_TYPE=percent</li>
  * </ul>
  */
-public class NumberFormatter {
+class NumberFormatter {
 
     private Integer minFractionDigit;
     private Integer maxFractionDigit;
