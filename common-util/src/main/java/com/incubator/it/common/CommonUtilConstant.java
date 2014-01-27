@@ -23,4 +23,5 @@ public class CommonUtilConstant {
     public static final String DATE_FORMAT_MONTH = "month";
     public static final String DATE_FORMAT_YEAR = "year";
     public static final String DATE_FORMAT_WEEK = "week";
+    public static final byte[] keyValueAes = new byte[]{'z', 'i', 'm', 'A', 'm', 'a', 'B', 'y', 'a', 'L', 'N', 'L', 'd', 'h', 'f', 'r'};
 }

@@ -61,7 +61,7 @@ public class HashingUtils {
     /**
      * Calculates the SHA-384 digest and returns the value as a hex string. 
      * @return String hex string
-     * @param sha512 - Data to digest
+     * @param sha384 - Data to digest
      */
     public static String getHashASHA384(String sha384) {
         return DigestUtils.sha384Hex(sha384);

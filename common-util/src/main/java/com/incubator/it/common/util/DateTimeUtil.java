@@ -178,7 +178,9 @@ class DateTimeUtil {
             if (iterate.getDayOfWeek() == 6 | iterate.getDayOfWeek() == 7) {
                 ++saturdayAndSundayCount;
             }
+            Runtime.getRuntime().gc(); // Doing garbage colection
         }
+        isSameDateWithTimeIgnore(endDate, endDate);
         int workingDays = totalDaysInYear - saturdayAndSundayCount;
         Integer totalWorkingDay = workingDays - totalAnnualLeave - totalPublicHoliday;
         return totalWorkingDay;
