@@ -16,14 +16,19 @@ import org.joda.time.Years;
 
 /**
  *
+ * <p>
+ * DateTimeUtil is a utility class for date manipulation. We can use all java
+ * Date type, like java.util.Date or java.sql.Date.
+ * </p>
+ *
  * @author Deni Husni Fahri Rizal
  * @version 1
  * @since 14 January 2014
  */
-class DateTimeUtil {
+public class DateTimeUtil {
 
     /**
-     * <p>
+     *
      * Get or return Past or Future date based on parameter</p>
      * <p>
      * <b>Parameter amount :</b> use negative symbol to get past date, use
@@ -33,7 +38,7 @@ class DateTimeUtil {
      * <b>Parameter constantParameter :</b> the type of times that will be
      * added. Example : CommonUtilConstant.DATE_FORMAT_MONTH</p>
      * <p>
-     * <b>Parameter type :</b></p>
+     * <b>ConstantParameter type :</b></p>
      * <ul>
      * <li>CommonUtilConstant.DATE_FORMAT_MILLISECOND = millisecond</li>
      * <li>CommonUtilConstant.DATE_FORMAT_SECOND = second</li>
@@ -47,7 +52,7 @@ class DateTimeUtil {
      *
      * @return Date type of past or future date
      * @param inputParam Date reference to calculate
-     * @param timeDifference Integer reference, can be negative value like -1 or
+     * @param timeDifference Integer reference, can be negative value like -7 or
      * positive value like 7
      * @param constantParameter String reference,see the CommonUtilConstant
      */
@@ -81,8 +86,8 @@ class DateTimeUtil {
     }
 
     /**
-     * Checking from two date type, will return true if the date have the
-     * same value, same date not same time.
+     * Checking from two date type, will return true if the date have the same
+     * value, same date not same time.
      *
      * @return Boolean
      * @param date1 Date reference
@@ -93,14 +98,13 @@ class DateTimeUtil {
     }
 
     /**
-     * Checking from two date objects ( included time ), will return true if the
+     * Checking from two date objects (included time ), will return true if the
      * date have the same value and same time instance.
      *
      * @return Boolean
      * @param date1 Date reference
      * @param date2 Date reference
      */
-
     public static Boolean isSameDateAndTime(Date date1, Date date2) {
         return DateUtils.isSameInstant(date1, date2);
     }
@@ -110,12 +114,34 @@ class DateTimeUtil {
      *
      * @param birthDate input date type
      * @return Integer age that calculate from today
+     * @throws java.lang.Exception
+     *
      */
-    public static Integer getAge(Date birthDate) {
-        DateMidnight date1 = new DateMidnight(birthDate);
-        DateTime now = new DateTime();
-        Years years = Years.yearsBetween(date1, now);
-        return years.getYears();
+    public static Integer getAge(Date birthDate) throws Exception {
+        if (birthDate.after(new Date())) {
+            throw new Exception("Your date is newer than to day. Can't be born in the future!");
+        } else {
+            DateMidnight date1 = new DateMidnight(birthDate);
+            DateTime now = new DateTime();
+            Years years = Years.yearsBetween(date1, now);
+            return years.getYears();
+        }
+    }
+
+    /**
+     * get total times (Age) based on date parameter and calculate with total
+     * difference of month
+     *
+     * @param birthDate input date type
+     * @return Double age that calculate from today.
+     * @throws java.lang.Exception
+     *
+     */
+    public static Double getAgeWithMonth(Date birthDate) throws Exception {
+        Integer age = getAge(birthDate);
+        Integer totalMonth = getTotalMonthDifference(birthDate, new Date());
+        Integer totalMonthDifference = totalMonth - (12 * age);
+        return age.doubleValue() + (totalMonthDifference.doubleValue() / 12);
     }
 
     /**
@@ -161,28 +187,60 @@ class DateTimeUtil {
      * @param endDate Date reference
      * @param totalPublicHoliday, total of public holiday in target country
      * @param totalAnnualLeave, total of annual leave
+     * @throws java.lang.Exception
      */
-    public static Integer getTotalWorkingDay(Date startDate, Date endDate, int totalPublicHoliday, int totalAnnualLeave) {
-        DateTime start = new DateTime(startDate);
-        DateTime end = new DateTime(endDate);
-        int saturdayAndSundayCount = 0;
-        int totalDaysInYear = 0;
-        DateTime iterate = start;
-        if (iterate.getDayOfWeek() == 6 | iterate.getDayOfWeek() == 7) {
-            ++saturdayAndSundayCount;
+    public static Integer getTotalWorkingDay(Date startDate, Date endDate, int totalPublicHoliday, int totalAnnualLeave) throws Exception {
+        if (startDate.after(endDate)) {
+            throw new Exception("End Date must be newer than Start Date");
+        } else {
+            int workingDays = getTotalDay(startDate, endDate) - getTotalSaturdayAndMonday(startDate, endDate);
+            Integer totalWorkingDay = workingDays - totalAnnualLeave - totalPublicHoliday;
+            return totalWorkingDay;
         }
-        ++totalDaysInYear;
-        while (!iterate.isEqual(end)) {
-            ++totalDaysInYear;
-            iterate = iterate.plusDays(1);
-            if (iterate.getDayOfWeek() == 6 | iterate.getDayOfWeek() == 7) {
-                ++saturdayAndSundayCount;
-            }
-            Runtime.getRuntime().gc(); // Doing garbage colection
-        }
-        isSameDateWithTimeIgnore(endDate, endDate);
-        int workingDays = totalDaysInYear - saturdayAndSundayCount;
-        Integer totalWorkingDay = workingDays - totalAnnualLeave - totalPublicHoliday;
-        return totalWorkingDay;
     }
+
+    /**
+     * get total Day between two date
+     *
+     * @param startDate Date reference
+     * @return Integer
+     * @param endDate Date reference
+     * @throws java.lang.Exception
+     */
+    public static Integer getTotalDay(Date startDate, Date endDate) throws Exception {
+        if (startDate.after(endDate)) {
+            throw new Exception("End Date must be newer than Start Date");
+        } else {
+            return getTotalDayDifference(startDate, endDate) + 1;
+        }
+    }
+
+    /**
+     * get total SaturDay and Monday between two date
+     *
+     * @param startDate Date reference
+     * @return Integer
+     * @param endDate Date reference
+     * @throws java.lang.Exception
+     */
+    public static Integer getTotalSaturdayAndMonday(Date startDate, Date endDate) throws Exception {
+        if (startDate.after(endDate)) {
+            throw new Exception("End Date must be newer than Start Date");
+        } else {
+            DateTime start = new DateTime(startDate);
+            DateTime end = new DateTime(endDate);
+            int totalSaturdayAndMonday = 0;
+            DateTime iterate = start;
+            while (iterate.isBefore(end)) {
+                if (iterate.getDayOfWeek() == 6 | iterate.getDayOfWeek() == 7) {
+                    ++totalSaturdayAndMonday;
+                }
+                iterate = iterate.plusDays(1);
+            }
+            return totalSaturdayAndMonday;
+        }
+    }
+
+   
+
 }

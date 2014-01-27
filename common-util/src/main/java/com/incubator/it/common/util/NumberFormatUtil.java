@@ -13,10 +13,6 @@ import java.util.Locale;
  * NumberFormatter, a class with function is to format and parse from String type to
  * Number and vice versa.
  * Note this class managed by Spring.
- *
- * @author Deni Husni Fahri Rizal
- * @version 1
- * @since 14 January 2014
  * <p>
  * minFractionDigit total minimum digit</P>
  * <p>
@@ -34,8 +30,12 @@ import java.util.Locale;
  * <li>CommonUtilConstant.NUMBER_FORMAT_NUMBER_TYPE=number</li>
  * <li>CommonUtilConstant.NUMBER_FORMAT_PERCENT_TYPE=percent</li>
  * </ul>
+ *
+ * @author Deni Husni Fahri Rizal
+ * @version 1
+ * @since 14 January 2014
  */
-class NumberFormatter {
+public class NumberFormatUtil {
 
     private Integer minFractionDigit;
     private Integer maxFractionDigit;
