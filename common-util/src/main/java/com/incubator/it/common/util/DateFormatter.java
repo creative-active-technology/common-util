@@ -14,7 +14,7 @@ import java.util.Locale;
  * DateFormatter is a class with function to format and parse from String to
  * Date and vice versa.</p>
  * Note this class is managed by Spring and all global parameter like
- * defaultLocale is injection using setter injection by spring.
+ * defaultLocale,datePattern, and other are injection using setter injection by spring.
  * <p>
  * @author Deni Husni Fahri Rizal
  * @version 1
@@ -107,11 +107,11 @@ public class DateFormatter {
     /**
      *
      * <p>
-     * Get Date format with default locale, the return value is string with
-     * default date pattern (dd-MMMM-yyyy).This date pattern is taken from
-     * application properties. For more detail please see
+     * Return value is string with default date pattern (dd-MMMM-yyyy).This date
+     * pattern is taken from application properties.For more detail please see
      * application.properties</p>
-     * <br/>
+     * <p>
+     * The Date format using default active locale.</p>
      *
      * @return String return value is string with pattern date dd-MMMM-yyyy
      * @param date the date reference
@@ -142,12 +142,13 @@ public class DateFormatter {
     /**
      * <p>
      * Get Date format with default locale, the return value is string with
-     * default full pattern (dd-MMMM-yy|hh:mm a)</p>
-     * <br/>
+     * default full pattern (dd-MMMM-yy|hh:mm a)
+     * </p>
+     * 
      * </p>for value of default locale and date format pattern are configured in
      * application.properties</p>
      *
-     * @return String return value is string with default full date pattern
+     * @return the value is string with default full date pattern
      * dd-MMMM-yy|hh:mm a
      * @param date the date reference
      */
@@ -345,7 +346,7 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get full Date format with default locale, the return value is Date with
+     * Get Date with full date format with default locale, the return value is Date with
      * full date pattern (dd-MMMM-yy|hh:mm a).</p>
      * <br/>
      * <p>

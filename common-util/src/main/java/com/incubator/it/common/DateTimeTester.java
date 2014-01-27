@@ -6,13 +6,11 @@
 package com.incubator.it.common;
 
 import com.incubator.it.common.util.CheckDigitLunh;
-import com.incubator.it.common.util.DateTimeUtil;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.apache.commons.validator.routines.checkdigit.CheckDigit;
 
 /**
  *
@@ -61,7 +59,7 @@ public class DateTimeTester {
 //            System.out.println(" totoal day working " + DateTimeUtil.getTotalWorkingDay(date, endDate, 0, 0));
 //            System.out.println("Toatal day " + DateTimeUtil.getTotalDay(date, endDate));
 //            System.out.println("Toatal sabatu dan minggu " + DateTimeUtil.getTotalSaturdayAndMonday(date, endDate));
-            System.out.println(" Benar atau gak ya ??? "+CheckDigitLunh.isValidNumberByLunh("5241250010889615"));
+            System.out.println(" Benar atau gak ya ??? "+CheckDigitLunh.isValidNumberByLunh("5264221814355451"));
         } catch (Exception ex) {
             Logger.getLogger(DateTimeTester.class.getName()).log(Level.SEVERE, null, ex);
         }

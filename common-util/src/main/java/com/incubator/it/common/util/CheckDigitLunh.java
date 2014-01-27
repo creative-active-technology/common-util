@@ -6,6 +6,7 @@
 package com.incubator.it.common.util;
 
 import org.apache.commons.validator.routines.checkdigit.CheckDigit;
+import org.apache.commons.validator.routines.checkdigit.CheckDigitException;
 import org.apache.commons.validator.routines.checkdigit.LuhnCheckDigit;
 
 /**
@@ -16,8 +17,25 @@ import org.apache.commons.validator.routines.checkdigit.LuhnCheckDigit;
  */
 public class CheckDigitLunh {
 
+    /**
+     * Check a number is valid or not using lunh algorithm
+     *
+     * @param number
+     * @return Boolean
+     */
     public static Boolean isValidNumberByLunh(String number) {
         CheckDigit checkDigit = new LuhnCheckDigit();
         return checkDigit.isValid(number);
+    }
+
+    /**
+     * Calculate a number for the check digit
+     * @param code
+     * @return String code of check digit
+     * @throws org.apache.commons.validator.routines.checkdigit.CheckDigitException
+     */
+    public static String calculate(String code) throws CheckDigitException {
+        CheckDigit checkDigit = new LuhnCheckDigit();
+        return checkDigit.calculate(code);
     }
 }
