@@ -7,8 +7,8 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-    <!--<context:property-placeholder location="classpath*:application.properties" />-->
-    <bean id="dateFormater" class="com.incubator.it.common.util.DateFormatter" lazy-init="true">
+    <context:property-placeholder location="classpath*:common_util.properties" />
+    <bean id="dateFormatter" class="com.incubator.it.common.util.DateFormatter" lazy-init="true">
         <property name="defaultLocale" value="${common.util.defaultLocale}"/>
         <property name="datePattern" value="${common.util.datePattern}"/>
         <property name="timePattern" value="${common.util.timePattern}"/>
@@ -30,8 +30,5 @@
         <property name="jsonPatternDateFormat" value="${common.util.dateFullPattern}"/>
     </bean>
      
-    <bean id="uploadUtil" class="com.csl.web.core.util.UploadUtil">
-        <property name="pathUpload" value="${common.util.pathUpload}"/>
-    </bean>
    
 </beans>

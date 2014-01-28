@@ -483,6 +483,7 @@ public class DateFormatter {
      * @return String return value is string with default month pattern MMMM
      * @param stringDate the String reference
      * @param locale Locale reference
+     * @throws java.text.ParseException
      */
     public Date getMonthWithActiveLocale(String stringDate, Locale locale) throws ParseException {
         return new SimpleDateFormat(monthPattern, locale).parse(stringDate);
