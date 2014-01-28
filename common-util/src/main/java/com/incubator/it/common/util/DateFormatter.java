@@ -14,7 +14,8 @@ import java.util.Locale;
  * DateFormatter is a class with function to format and parse from String to
  * Date and vice versa.</p>
  * Note this class is managed by Spring and all global parameter like
- * defaultLocale,datePattern, and other are injection using setter injection by spring.
+ * defaultLocale,datePattern, and other are injection using setter injection by
+ * spring.
  * <p>
  * @author Deni Husni Fahri Rizal
  * @version 1
@@ -107,8 +108,9 @@ public class DateFormatter {
     /**
      *
      * <p>
-     * Return value is string with default date pattern (dd-MMMM-yyyy).This date
-     * pattern is taken from application properties.For more detail please see
+     * Get Date and formated with default locale. Return value is string with
+     * default date pattern (dd-MMMM-yyyy). This date pattern is taken from
+     * application properties. For more detail please see
      * application.properties</p>
      * <p>
      * The Date format using default active locale.</p>
@@ -123,12 +125,11 @@ public class DateFormatter {
     /**
      *
      * <p>
-     * Get Date format with specific locale, the return value is string with
-     * default date pattern (dd-MMMM-yyyy). We can inject locale form session or
-     * any kind a way to retrieve locale </p>
-     * <br/>
+     * Get Date and formated with specific locale. The return value is string
+     * with default date pattern (dd-MMMM-yyyy). We can inject locale form
+     * session or any kind a way to retrieve locale </p>
      * <p>
-     * for value of default locale and date format pattern are configured in
+     * The value of default locale and date format pattern are configured in
      * application.properties</p>
      *
      * @return String return value is string with pattern date dd-MMMM-yyyy
@@ -141,11 +142,10 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get Date format with default locale, the return value is string with
-     * default full pattern (dd-MMMM-yy|hh:mm a)
+     * Get Date and formated with default locale. The return value is string
+     * with default full pattern (dd-MMMM-yy|hh:mm a)
      * </p>
-     * 
-     * </p>for value of default locale and date format pattern are configured in
+     * </p>The value of default locale and date format pattern are configured in
      * application.properties</p>
      *
      * @return the value is string with default full date pattern
@@ -158,12 +158,12 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get Date format with specific locale, the return value is string with
-     * default full date pattern (dd-MMMM-yy|hh:mm a)</p>
-     * <br/>
+     * Get Date and formated with specific locale. The return value is string
+     * with default full date pattern (dd-MMMM-yy|hh:mm a)</p>
      * <p>
-     * for value of default locale and date format pattern are configured in
-     * application.properties</p>
+     * For value of date format pattern are configured in
+     * application.properties.We can inject locale form session or any kind a
+     * way to retrieve locale </p>
      *
      * @return String return value is string with default full date pattern
      * dd-MMMM-yy|hh:mm a
@@ -176,11 +176,11 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get time format with default locale, the return value is string with
-     * default time pattern (hh:mm:ss)</p>
-     * <br/>
+     * Get date only time and formated with default locale. The return value is
+     * string with default time pattern (hh:mm:ss)</p>
+     *
      * <p>
-     * for value of default locale and default time pattern are configured in
+     * The value of default locale and default time pattern are configured in
      * application.properties</p>
      *
      * @return String return value is string with default time pattern hh:mm:ss
@@ -192,12 +192,13 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get time format with default specific locale, the return value is string
-     * with default time pattern (hh:mm:ss)</p>
-     * <br/>
+     * Get date only time and formated with specific locale.The return value is
+     * string with default time pattern (hh:mm:ss)</p>
+     *
      * <p>
-     * for value of default locale and default time pattern are configured in
-     * application.properties</p>
+     * The value of default time pattern are configured in
+     * application.properties. We can inject locale form session or any kind a
+     * way to retrieve locale </p>
      *
      * @return String return value is string with default time pattern hh:mm:ss
      * @param date the date reference
@@ -209,9 +210,9 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get month format with default default locale, the return value is string
-     * with default month pattern (MMMM)</p>
-     * <br/><p>
+     * Get date only month and formated with default locale, the return value is
+     * string with default month pattern (MMMM)</p>
+     * <p>
      * for value of default locale and default month pattern are configured in
      * application.properties
      * </p>
@@ -225,12 +226,12 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get month format with default specific locale, the return value is string
-     * with default month pattern (MMMM)</p>
-     * <br/>
+     * Get date only month and formated with specific locale. The return value
+     * is string with default month pattern (MMMM)</p>
      * <p>
-     * for value of default locale and default month pattern are configured in
-     * application.properties</p>
+     * The value of default month pattern are configured in
+     * application.properties. We can inject locale form session or any kind a
+     * way to retrieve locale </p>
      *
      * @return String return value is string with default month pattern MMMM
      * @param date the date reference
@@ -242,11 +243,11 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get year format with default locale, the return value is string with
-     * default year pattern (yyyy)</p>
-     * <br/>
+     * Get date only year and formated with default locale. The return value is
+     * string with default year pattern (yyyy)</p>
+     * <
      * <p>
-     * for value of default locale and default year pattern are configured in
+     * The value of default locale and default year pattern are configured in
      * application.properties</p>
      *
      * @return String return value is string with default year pattern yyyy
@@ -258,12 +259,13 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get year format with specific locale, the return value is string with
-     * default year pattern (yyyy)</p>
-     * <br/>
+     * Get date only year and formated with specific locale. The return value is
+     * string with default year pattern (yyyy)</p>
+     *
      * <p>
-     * for value of default locale and default year pattern are configured in
-     * application.properties</p>
+     * The value of default year pattern are configured in
+     * application.properties. We can inject locale form session or any kind a
+     * way to retrieve locale.</p>
      *
      * @return String return value is string with default year pattern yyyy
      * @param date the date reference
@@ -275,11 +277,11 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get month and year format with default locale, the return value is string
-     * with default month and year pattern (MMMM-yyyy)</p>
-     * <br/>
+     * Get date only month and year and formated with default locale. The return
+     * value is string with default month and year pattern (MMMM-yyyy)</p>
+     *
      * <p>
-     * for value of default locale, default month and year pattern are
+     * The value of default locale, default month and year pattern are
      * configured in application.properties</p>
      *
      * @return String return value is string with default month and year pattern
@@ -292,12 +294,14 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get month and year format with specific locale, the return value is
-     * string with default month and year pattern (MMMM-yyyy)</p>
-     * <br/>
+     * Get date only month and year and formated with specific locale. The
+     * return value is string with default month and year pattern
+     * (MMMM-yyyy)</p>
+     *
      * <p>
-     * for value of default locale, default month and year pattern are
-     * configured in application.properties</p>
+     * The value of default month and year pattern are configured in
+     * application.properties. We can inject locale form session or any kind a
+     * way to retrieve locale.</p>
      *
      * @return String return value is string with default month and year pattern
      * MMMM-yyyy
@@ -310,33 +314,68 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get Date format with default locale, the return value is Date with
-     * default date pattern (dd-MMMM-yyyy).</p>
-     * <br/>
+     * Get date only day and month and formated with active locale, the return
+     * value is String with default Day & Month pattern (dd-MMMM).</p>
+     *
      * <p>
-     * for value of default locale and date format pattern are configured in
+     * The value of day & month pattern are configured in
+     * application.properties. We can inject locale form session or any kind a
+     * way to retrieve locale.</p>
+     *
+     * @param locale locale reference
+     * @return Date return value is Date with Month pattern dd-MMMM
+     * @param date Date reference
+     */
+    public String getDayAndMonthAsStringsWithActiveLocale(Date date, Locale locale) {
+        return new SimpleDateFormat(dayAndMonthPattern, locale).format(date);
+    }
+
+    /**
+     * <p>
+     * Get date only day and month and formated with active locale. The return
+     * value is String with default Day & Month pattern (dd-MMMM).</p>
+     *
+     * <p>
+     * The value of active locale and format for day & month pattern are
+     * configured in application.properties</p>
+     *
+     * @return Date return value is Date with Month pattern dd-MMMM
+     * @param date Date reference
+     */
+    public String getDayAndMonthAsStringsDefaultLocale(Date date) {
+        return new SimpleDateFormat(dayAndMonthPattern, new Locale(defaultLocale)).format(date);
+    }
+
+    /**
+     *
+     * <p>
+     * Get Date and formated with default locale. Return value is Date with
+     * default date pattern (dd-MMMM-yyyy). This date pattern is taken from
+     * application properties. For more detail please see
      * application.properties</p>
+     * <p>
+     * The Date format using default active locale.</p>
      *
-     * @return Date return value is Date with pattern date dd-MMMM-yyyy
-     * @param inputDate String reference
+     * @return String return value is string with pattern date dd-MMMM-yyyy
+     * @param inputDate the date reference
      * @throws java.text.ParseException
-     *
      */
     public Date getDateDefaultLocale(String inputDate) throws ParseException {
         return new SimpleDateFormat(datePattern, new Locale(defaultLocale)).parse(inputDate);
     }
 
     /**
+     *
      * <p>
-     * Get Date format with specific locale, the return value is Date with
-     * default date pattern (dd-MMMM-yyyy).</p>
-     * <br/>
+     * Get Date and formated with specific locale. The return value is Date with
+     * default date pattern (dd-MMMM-yyyy). We can inject locale form session or
+     * any kind a way to retrieve locale </p>
      * <p>
-     * for value of default locale and date format pattern are configured in
+     * The value of default locale and date format pattern are configured in
      * application.properties</p>
      *
-     * @return Date return value is Date with pattern date dd-MMMM-yyyy
-     * @param inputDate String reference
+     * @return String return value is string with pattern date dd-MMMM-yyyy
+     * @param inputDate the String reference
      * @param locale Locale reference
      * @throws java.text.ParseException
      */
@@ -346,15 +385,15 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get Date with full date format with default locale, the return value is Date with
-     * full date pattern (dd-MMMM-yy|hh:mm a).</p>
-     * <br/>
-     * <p>
-     * for value of default locale and format for full date pattern are
-     * configured in application.properties</p>
+     * Get Date and formated with default locale. The return value is Date with
+     * default full pattern (dd-MMMM-yy|hh:mm a)
+     * </p>
+     * </p>The value of default locale and date format pattern are configured in
+     * application.properties</p>
      *
-     * @return Date return value is Date with pattern date dd-MMMM-yy|hh:mm a
-     * @param stringDate String reference
+     * @return the value is Date with default full date pattern dd-MMMM-yy|hh:mm
+     * a
+     * @param stringDate the String reference
      * @throws java.text.ParseException
      */
     public Date getDateFullDefaultLocale(String stringDate) throws ParseException {
@@ -363,12 +402,13 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get full Date format with specific locale, the return value is Date with
+     * Get Date and formated with specific locale. The return value is Date with
      * full date pattern (dd-MMMM-yy|hh:mm a).</p>
-     * <br/>
+     *
      * <p>
-     * for value of default locale and format for full date pattern are
-     * configured in application.properties</p>
+     * The value of full date pattern are configured in
+     * application.properties.We can inject locale form session or any kind a
+     * way to retrieve locale.</p>
      *
      * @return Date return value is Date with pattern date dd-MMMM-yy|hh:mm a
      * @param stringDate String reference
@@ -381,15 +421,15 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get Time with default locale, the return value is Date with default time
-     * pattern (hh:mm:ss).</p>
-     * <br/>
+     * Get date only time and formated with default locale. The return value is
+     * Date with default time pattern (hh:mm:ss)</p>
+     *
      * <p>
-     * for value of default locale and format for Time pattern are configured in
+     * The value of default locale and default time pattern are configured in
      * application.properties</p>
      *
-     * @return Date return value is Date with Time pattern hh:mm:ss
-     * @param stringDate String reference
+     * @return String return value is string with default time pattern hh:mm:ss
+     * @param stringDate the String reference
      * @throws java.text.ParseException
      */
     public Date getTimeDefaultLocale(String stringDate) throws ParseException {
@@ -418,7 +458,7 @@ public class DateFormatter {
      * <p>
      * Get Month with default locale, the return value is Date with default
      * month pattern (MMMM).</p>
-     * <br/>
+     *
      * <p>
      * for value of default locale and format for month pattern are configured
      * in application.properties</p>
@@ -433,17 +473,16 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get Month with specific locale, the return value is Date with default
-     * month pattern (MMMM).</p>
-     * <br/>
+     * Get date only month and formated with specific locale. The return value
+     * is Date with default month pattern (MMMM)</p>
      * <p>
-     * for value of default locale and format for month pattern are configured
-     * in application.properties</p>
+     * The value of default month pattern are configured in
+     * application.properties. We can inject locale form session or any kind a
+     * way to retrieve locale </p>
      *
-     * @return Date return value is Date with Month pattern MMMM
-     * @param stringDate String reference
+     * @return String return value is string with default month pattern MMMM
+     * @param stringDate the String reference
      * @param locale Locale reference
-     * @throws java.text.ParseException
      */
     public Date getMonthWithActiveLocale(String stringDate, Locale locale) throws ParseException {
         return new SimpleDateFormat(monthPattern, locale).parse(stringDate);
@@ -451,15 +490,15 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get Year with default locale, the return value is Date with default Year
-     * pattern (yyyy).</p>
-     * <br/>
+     * Get date only year and formated with default locale. The return value is
+     * Date with default year pattern (yyyy)</p>
+     * <
      * <p>
-     * for value of default locale and format for year pattern are configured in
+     * The value of default locale and default year pattern are configured in
      * application.properties</p>
      *
-     * @return Date return value is Date with Month pattern yyyy
-     * @param stringDate String reference
+     * @return String return value is string with default year pattern yyyy
+     * @param stringDate the date reference
      * @throws java.text.ParseException
      */
     public Date getYearDefaultLocale(String stringDate) throws ParseException {
@@ -468,15 +507,16 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get Year with specific locale, the return value is Date with default Year
-     * pattern (yyyy).</p>
-     * <br/>
-     * <p>
-     * for value of default locale and format for year pattern are configured in
-     * application.properties</p>
+     * Get date only year and formated with specific locale. The return value is
+     * Date with default year pattern (yyyy)</p>
      *
-     * @return Date return value is Date with Month pattern yyyy
-     * @param stringDate String reference
+     * <p>
+     * The value of default year pattern are configured in
+     * application.properties. We can inject locale form session or any kind a
+     * way to retrieve locale.</p>
+     *
+     * @return String return value is string with default year pattern yyyy
+     * @param stringDate the String reference
      * @param locale Locale reference
      * @throws java.text.ParseException
      */
@@ -486,15 +526,16 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get Month and Year with default locale, the return value is Date with
-     * default Month & Year pattern (MMMM-yyyy).</p>
-     * <br/>
+     * Get date only month and year and formated with default locale. The return
+     * Date is string with default month and year pattern (MMMM-yyyy)</p>
+     *
      * <p>
-     * for value of default locale and format for year & year pattern are
+     * The value of default locale, default month and year pattern are
      * configured in application.properties</p>
      *
-     * @return Date return value is Date with Month pattern MMMM-yyyy
-     * @param stringDate String reference
+     * @return String return value is string with default month and year pattern
+     * MMMM-yyyy
+     * @param stringDate the String reference
      * @throws java.text.ParseException
      */
     public Date getMonthAndYearDefaultLocale(String stringDate) throws ParseException {
@@ -503,15 +544,17 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get Month and Year with specific locale, the return value is Date with
-     * default Month & Year pattern (MMMM-yyyy).</p>
-     * <br/>
-     * <p>
-     * for value of default locale and format for year & year pattern are
-     * configured in application.properties</p>
+     * Get date only month and year and formated with specific locale. The
+     * return value is Date with default month and year pattern (MMMM-yyyy)</p>
      *
-     * @return Date return value is Date with Month pattern MMMM-yyyy
-     * @param stringDate String reference
+     * <p>
+     * The value of default month and year pattern are configured in
+     * application.properties. We can inject locale form session or any kind a
+     * way to retrieve locale.</p>
+     *
+     * @return String return value is string with default month and year pattern
+     * MMMM-yyyy
+     * @param stringDate the String reference
      * @param locale Locale reference
      * @throws java.text.ParseException
      */
@@ -521,11 +564,11 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get Day and Month with default locale, the return value is Date with
-     * default Day & Month pattern (dd-MMMM).</p>
-     * <br/>
+     * Get date only day and month and formated with active locale. The return
+     * value is Date with default Day & Month pattern (dd-MMMM).</p>
+     *
      * <p>
-     * for value of default locale and format for day & month pattern are
+     * The value of active locale and format for day & month pattern are
      * configured in application.properties</p>
      *
      * @return Date return value is Date with Month pattern dd-MMMM
@@ -538,12 +581,13 @@ public class DateFormatter {
 
     /**
      * <p>
-     * Get Day and Month with active locale, the return value is Date with
-     * default Day & Month pattern (dd-MMMM).</p>
-     * <br/>
+     * Get date only day and month and formated with active locale, the return
+     * value is Date with default Day & Month pattern (dd-MMMM).</p>
+     *
      * <p>
-     * for value of active locale and format for day & month pattern are
-     * configured in application.properties</p>
+     * The value of day & month pattern are configured in
+     * application.properties. We can inject locale form session or any kind a
+     * way to retrieve locale.</p>
      *
      * @param locale locale reference
      * @return Date return value is Date with Month pattern dd-MMMM
@@ -554,36 +598,4 @@ public class DateFormatter {
         return new SimpleDateFormat(dayAndMonthPattern, locale).parse(stringDate);
     }
 
-    /**
-     * <p>
-     * Get Day and Month with active locale, the return value is String with
-     * default Day & Month pattern (dd-MMMM).</p>
-     * <br/>
-     * <p>
-     * for value of active locale and format for day & month pattern are
-     * configured in application.properties</p>
-     *
-     * @param locale locale reference
-     * @return Date return value is Date with Month pattern dd-MMMM
-     * @param date Date reference
-     */
-    public String getDayAndMonthAsStringsWithActiveLocale(Date date, Locale locale) {
-        return new SimpleDateFormat(dayAndMonthPattern, locale).format(date);
-    }
-
-    /**
-     * <p>
-     * Get Day and Month with active locale, the return value is String with
-     * default Day & Month pattern (dd-MMMM).</p>
-     * <br/>
-     * <p>
-     * for value of active locale and format for day & month pattern are
-     * configured in application.properties</p>
-     *
-     * @return Date return value is Date with Month pattern dd-MMMM
-     * @param date Date reference
-     */
-    public String getDayAndMonthAsStringsDefaultLocale(Date date) {
-        return new SimpleDateFormat(dayAndMonthPattern, new Locale(defaultLocale)).format(date);
-    }
 }
