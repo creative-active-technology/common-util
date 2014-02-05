@@ -20,13 +20,13 @@
         <property name="dayAndMonthPattern" value="${common.util.dayAndMonthPattern}"/>
     </bean>
     
-    <bean id="numberFormatter" class="com.csl.common.util.NumberFormatter" lazy-init="true" >
+    <bean id="numberFormatter" class="com.incubator.it.common.util.NumberFormatter" lazy-init="true" >
         <property name="defaultLocale" value="${common.util.defaultLocale}"/>
         <property name="minFractionDigit" value="${common.util.maxFractionDigit}"/>
         <property name="maxFractionDigit" value="${common.util.minFractionDigit}"/>
     </bean>
     
-    <bean id="jsonGsonConverter" class="com.csl.common.util.JsonGsonConverter" lazy-init="true" >
+    <bean id="jsonConverter" class="com.incubator.it.common.util.JsonConverter" lazy-init="true" >
         <property name="jsonPatternDateFormat" value="${common.util.dateFullPattern}"/>
     </bean>
      

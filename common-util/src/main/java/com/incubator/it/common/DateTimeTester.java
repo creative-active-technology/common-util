@@ -6,6 +6,9 @@
 package com.incubator.it.common;
 
 import com.incubator.it.common.util.CheckDigitLunh;
+import com.incubator.it.common.util.DecimalHexBinaryConverter;
+import com.incubator.it.common.util.RandomNumberUtil;
+import com.incubator.it.common.util.UUIDUtil;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,16 +25,17 @@ public class DateTimeTester {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+//        try {
         // TODO code application logic here
-        String tanggal = "01-01-2014";
+//        String tanggal = "01-01-2014";
+//
+//        Date date = null;
+//        try {
+//            date = new SimpleDateFormat("dd-MM-yyyy").parse(tanggal);
+//        } catch (ParseException ex) {
+//            Logger.getLogger(DateTimeTester.class.getName()).log(Level.SEVERE, null, ex);
+//        }
 
-        Date date = null;
-        try {
-            date = new SimpleDateFormat("dd-MM-yyyy").parse(tanggal);
-        } catch (ParseException ex) {
-            Logger.getLogger(DateTimeTester.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
 //        CheckDigit
 //        System.out.println("Nitlai taanggalnya " + DateTimeUtil.getTotalMonthDifference(date, new Date()));
 //        try {
@@ -53,16 +57,30 @@ public class DateTimeTester {
 //        } catch (Exception ex) {
 //            Logger.getLogger(DateTimeTester.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-
-        Date endDate = new Date();
-        try {
-//            System.out.println(" totoal day working " + DateTimeUtil.getTotalWorkingDay(date, endDate, 0, 0));
-//            System.out.println("Toatal day " + DateTimeUtil.getTotalDay(date, endDate));
-//            System.out.println("Toatal sabatu dan minggu " + DateTimeUtil.getTotalSaturdayAndMonday(date, endDate));
-            System.out.println(" Benar atau gak ya ??? "+CheckDigitLunh.isValidNumberByLunh("5264221814355451"));
-        } catch (Exception ex) {
-            Logger.getLogger(DateTimeTester.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        Date endDate = new Date();
+//        try {
+////            System.out.println(" totoal day working " + DateTimeUtil.getTotalWorkingDay(date, endDate, 0, 0));
+////            System.out.println("Toatal day " + DateTimeUtil.getTotalDay(date, endDate));
+////            System.out.println("Toatal sabatu dan minggu " + DateTimeUtil.getTotalSaturdayAndMonday(date, endDate));
+//            System.out.println(" Benar atau gak ya ??? "+CheckDigitLunh.isValidNumberByLunh("5264221814355451"));
+//        } catch (Exception ex) {
+//            Logger.getLogger(DateTimeTester.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//            Double a=RandomNumberUtil.getRandomNumber(3);
+//            System.out.println(a);
+//        for (int j = 1; j < 10; j++) {
+//            System.out.println(RandomNumberUtil.getRandomBettween(20000,2000000000));
+//        }
+//        } catch (Exception ex) {
+//            Logger.getLogger(DateTimeTester.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//         System.out.println(UUIDUtil.getRandomDataUUID());
+//         String sdfsdf=UUIDUtil.getRandomUUID(37).toUpperCase();
+//         System.out.println(sdfsdf);
+         System.out.println(Integer.toBinaryString(100));
+         System.out.println(DecimalHexBinaryConverter.decimalToBinary(100));
+//         System.out.println(UUIDUtil.getRandomDataEnd(10));
+//         System.out.println(sdfsdf.substring(2));
+//        System.out.println(UUIDUtil.getRandomDataBefore(-10));
     }
-
 }

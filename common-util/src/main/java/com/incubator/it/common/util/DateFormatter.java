@@ -125,6 +125,23 @@ public class DateFormatter {
     /**
      *
      * <p>
+     * Get Date and formated with default locale. Return value is string with
+     * default date pattern (dd-MMMM-yyyy). This date pattern is taken from
+     * CommonUtilConstant.DEFAULT_DATE_PATTERN. This method is static so don't managed by spring.
+     * <p>
+     * The Date format using default active locale.</p>
+     *
+     * @param datePattern
+     * @return String return value is string with pattern date dd-MMMM-yyyy
+     * @param date the date reference
+     */
+    public static String getDateAsStringsDefaultLocale(Date date, String datePattern) {
+        return new SimpleDateFormat(datePattern, Locale.getDefault()).format(date);
+    }
+
+    /**
+     *
+     * <p>
      * Get Date and formated with specific locale. The return value is string
      * with default date pattern (dd-MMMM-yyyy). We can inject locale form
      * session or any kind a way to retrieve locale </p>

@@ -18,7 +18,7 @@ import org.apache.commons.validator.routines.checkdigit.LuhnCheckDigit;
 public class CheckDigitLunh {
 
     /**
-     * Check a number is valid or not using lunh algorithm
+     * Check a series of number is valid or not using lunh algorithm
      *
      * @param number
      * @return Boolean

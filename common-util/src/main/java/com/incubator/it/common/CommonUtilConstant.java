@@ -12,6 +12,7 @@ package com.incubator.it.common;
  * @since 14 January 2014
  */
 public class CommonUtilConstant {
+
     public static final String NUMBER_FORMAT_CURRENCY_TYPE = "currency";
     public static final String NUMBER_FORMAT_NUMBER_TYPE = "number";
     public static final String NUMBER_FORMAT_PERCENT_TYPE = "percent";
@@ -23,5 +24,16 @@ public class CommonUtilConstant {
     public static final String DATE_FORMAT_MONTH = "month";
     public static final String DATE_FORMAT_YEAR = "year";
     public static final String DATE_FORMAT_WEEK = "week";
-    public static final byte[] keyValueAes = new byte[]{'z', 'i', 'm', 'A', 'm', 'a', 'B', 'y', 'a', 'L', 'N', 'L', 'd', 'h', 'f', 'r'};
+    public static final byte[] KEY_VALUE_AES = new byte[]{'z', 'i', 'm', 'A', 'm', 'a', 'B', 'y', 'a', 'L', 'N', 'L', 'd', 'h', 'f', 'r'};
+    public static final Integer MIN_PRACTION_DIGIT = 2;
+    public static final Integer MAX_PRACTION_DIGIT = 4;
+    public static final String DEFAULT_LOCAL = "in";
+    public static final String JSON_PATTERN_DATE_FORMAT = "dd-MMMM-yyyy";
+    public static final String DEFAULT_DATE_PATTERN = "dd-MMMM-yyyy";
+    public static final String AES_ALGO = "AES";
+    public static final String INTEGER_TYPE = "Integer";
+    public static final String DOUBLE_TYPE = "Double";
+    public static final String FLOAT_TYPE = "Float";
+    public static final String LONG_TYPE = "Long";
+
 }

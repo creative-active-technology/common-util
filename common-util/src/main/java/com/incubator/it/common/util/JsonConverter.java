@@ -35,26 +35,66 @@ public class JsonConverter {
 
     /*
      * @return String in json format
-     * @param object is all java Object speciali pojo or javabeans.This object will convert to json.
+     * @param object is all java Object ecspecialy  pojo or javabeans.
+     * This object will convert to json.
      */
     public String getJson(Object object) {
         Gson gson = new GsonBuilder().setDateFormat(jsonPatternDateFormat).create();
         return gson.toJson(object).toString();
     }
     /*
-     * @return String value of json base on keyName parameter.
-     * @param jsonMsg is json
-     * @param keyName is key paremeter that we will get value within
+     * This method is static method so don't managed by spring
+     * @return String in json format 
+     * @param object is all java Object ecspecialy  pojo or javabeans.
+     * This object will convert to json.
      */
 
+    public static String getJson(Object object, String jsonPatternDateFormat) {
+        Gson gson = new GsonBuilder().setDateFormat(jsonPatternDateFormat).create();
+        return gson.toJson(object).toString();
+    }
+
+    /*
+     * @return String value of json base on keyName parameter.
+     * @param jsonMsg is json formate
+     * @param keyName is key paremeter that we will get value within
+     */
     public String getValueByKey(String jsonMsg, String keyName) {
         JsonElement jelement = new JsonParser().parse(jsonMsg);
         JsonObject jobject = jelement.getAsJsonObject();
         return jobject.get(keyName).getAsString();
     }
+    /*
+     * @return String value of json base on keyName parameter.
+     * @param jsonMsg is json formate
+     * @param keyName is key paremeter that we will get value within
+     */
+
+    public static String getValueByKeyStatic(String jsonMsg, String keyName) {
+        JsonElement jsonElemet = new JsonParser().parse(jsonMsg);
+        JsonObject jobject = jsonElemet.getAsJsonObject();
+        return jobject.get(keyName).getAsString();
+    }
+    /*
+     * @return Object of class java from json messages on keyName parameter.
+     * @param jsonMsg is json formate
+     * @param keyName is key paremeter that we will get value within
+     */
 
     public Object getClassFromJson(String jsonMsg, Class clazz) {
         Gson gson = new GsonBuilder().setDateFormat(jsonPatternDateFormat).create();
         return gson.fromJson(jsonMsg, clazz);
     }
+    /*
+     * @return Object of class java from json messages on keyName parameter.
+     * @param jsonMsg is json formate
+     * @param keyName is key paremeter that we will get value within
+     * see CommonUtilConstant.JSON_PATTERN_DATE_FORMAT
+     */
+
+    public static Object getClassFromJson(String jsonMsg, Class clazz, String jsonPatternDateFormat) {
+        Gson gson = new GsonBuilder().setDateFormat(jsonPatternDateFormat).create();
+        return gson.fromJson(jsonMsg, clazz);
+    }
+
 }

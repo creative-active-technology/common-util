@@ -34,9 +34,9 @@ public class CommonUtilService {
      * <p>
      * This method support for @anotation (Autowire) and non @anotation
      *
-     * @author Deni Husni Fahri Rizal
-     * @param beansName String interfaced name
-     * @return Object instance of service
+     * return Object instance of service
+     * @param beansName is bean id in spring xml. It can be an object of interface or an object of class 
+     * @return 
      */
     public static Object getService(String beansName) {
         return getApplicationContext().getAutowireCapableBeanFactory().getBean(beansName);
