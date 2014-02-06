@@ -31,6 +31,7 @@ public class CommonUtilConstant {
     public static final String JSON_PATTERN_DATE_FORMAT = "dd-MMMM-yyyy";
     public static final String DEFAULT_DATE_PATTERN = "dd-MMMM-yyyy";
     public static final String AES_ALGO = "AES";
+    public static final String RSA_ALGO="RSA";
     public static final String INTEGER_TYPE = "Integer";
     public static final String DOUBLE_TYPE = "Double";
     public static final String FLOAT_TYPE = "Float";
