@@ -32,9 +32,9 @@ public class UUIDUtil {
      */
     public static String getRandomUUID(int size) {
         if (size > 36) {
-            throw new IndexOutOfBoundsException("Size to large. Maximum size is 36");
+            throw new IndexOutOfBoundsException("Mr. DHFR say :size to large. Maximum size is 36");
         } else if (size < 0) {
-            throw new IndexOutOfBoundsException("minimum size is 0. Cannot negative number");
+            throw new IndexOutOfBoundsException("Mr. DHFR say :minimum size is 0. Cannot negative number");
         } else {
             return getRandomDataUUID().substring(0, size);
         }

@@ -119,7 +119,7 @@ public class DateTimeUtil {
      */
     public static Integer getAge(Date birthDate) throws Exception {
         if (birthDate.after(new Date())) {
-            throw new Exception("Your date is newer than to day. Can't be born in the future!");
+            throw new Exception("Mr DHFR say :Your birthdate is newer than to day. Can't be born in the future!");
         } else {
             DateMidnight date1 = new DateMidnight(birthDate);
             DateTime now = new DateTime();
@@ -185,13 +185,13 @@ public class DateTimeUtil {
      * @param startDate Date reference
      * @return Integer
      * @param endDate Date reference
-     * @param totalPublicHoliday, total of public holiday in target country
-     * @param totalAnnualLeave, total of annual leave
+     * @param totalPublicHoliday total of public holiday in target country
+     * @param totalAnnualLeave total of annual leave
      * @throws java.lang.Exception
      */
     public static Integer getTotalWorkingDay(Date startDate, Date endDate, int totalPublicHoliday, int totalAnnualLeave) throws Exception {
         if (startDate.after(endDate)) {
-            throw new Exception("End Date must be newer than Start Date");
+            throw new Exception(" Mr. DHFR say :End Date must be newer than Start Date");
         } else {
             int workingDays = getTotalDay(startDate, endDate) - getTotalSaturdayAndMonday(startDate, endDate);
             Integer totalWorkingDay = workingDays - totalAnnualLeave - totalPublicHoliday;
@@ -209,7 +209,7 @@ public class DateTimeUtil {
      */
     public static Integer getTotalDay(Date startDate, Date endDate) throws Exception {
         if (startDate.after(endDate)) {
-            throw new Exception("End Date must be newer than Start Date");
+            throw new Exception("Mr. DHFR say :End Date must be newer than Start Date");
         } else {
             return getTotalDayDifference(startDate, endDate) + 1;
         }
@@ -225,7 +225,7 @@ public class DateTimeUtil {
      */
     public static Integer getTotalSaturdayAndMonday(Date startDate, Date endDate) throws Exception {
         if (startDate.after(endDate)) {
-            throw new Exception("End Date must be newer than Start Date");
+            throw new Exception("Mr. DHFR say :End Date must be newer than Start Date");
         } else {
             DateTime start = new DateTime(startDate);
             DateTime end = new DateTime(endDate);

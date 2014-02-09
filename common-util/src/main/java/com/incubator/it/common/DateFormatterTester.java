@@ -8,6 +8,7 @@ package com.incubator.it.common;
 
 import com.incubator.it.common.service.CommonUtilService;
 import com.incubator.it.common.util.DateFormatter;
+import com.incubator.it.common.util.DateTimeUtil;
 import java.util.Date;
 import java.util.Locale;
 
@@ -20,10 +21,11 @@ public class DateFormatterTester {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // TODO code application logic here
         DateFormatter dateFormatter=(DateFormatter) CommonUtilService.getService("dateFormatter");
-        System.out.println(dateFormatter.getDateFullAsStringsWithActiveLocale(new Date(), Locale.FRENCH));
+        System.out.println(dateFormatter.getDateFullAsStringsWithActiveLocale(new Date(), Locale.ITALIAN));
+        System.out.println(DateTimeUtil.getAge(new Date()));
     }
     
 }

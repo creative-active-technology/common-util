@@ -9,6 +9,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.springframework.beans.factory.InitializingBean;
 
 /**
  * <p>
@@ -25,9 +26,17 @@ import com.google.gson.JsonParser;
  * @since 19 January 2014
  *
  */
-public class JsonConverter {
+public class JsonConverter implements InitializingBean {
 
     private String jsonPatternDateFormat;
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        if (jsonPatternDateFormat.equalsIgnoreCase("") || jsonPatternDateFormat == null) {
+            throw new Exception("Mr. DHFR say :Property of jsonPatternDateFormat can't be null."
+                    + " Please see and config spring config xml or common_util.properties");
+        }
+    }
 
     public void setJsonPatternDateFormat(String jsonPatternDateFormat) {
         this.jsonPatternDateFormat = jsonPatternDateFormat;

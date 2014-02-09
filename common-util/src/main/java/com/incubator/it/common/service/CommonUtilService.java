@@ -20,7 +20,8 @@ public class CommonUtilService {
     /**
      *
      *
-     * @return ApplicationContext
+     * 
+     * @return object of ApplicationContext
      */
     public static ApplicationContext getApplicationContext() {
         if (appContext == null) {

@@ -8,20 +8,21 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import org.springframework.beans.factory.InitializingBean;
 
 /**
  * <p>
  * DateFormatter is a class with function to format and parse from String to
  * Date and vice versa.</p>
  * Note this class is managed by Spring and all global parameter like
- * defaultLocale,datePattern, and other are injection using setter injection by
+ * defaultLocale,datePattern and other are injection using setter injection by
  * spring.
  * <p>
  * @author Deni Husni Fahri Rizal
  * @version 1
  * @since 18 January 2014
  */
-public class DateFormatter {
+public class DateFormatter implements InitializingBean {
 
     private String defaultLocale;
     private String datePattern;
@@ -127,7 +128,8 @@ public class DateFormatter {
      * <p>
      * Get Date and formated with default locale. Return value is string with
      * default date pattern (dd-MMMM-yyyy). This date pattern is taken from
-     * CommonUtilConstant.DEFAULT_DATE_PATTERN. This method is static so don't managed by spring.
+     * CommonUtilConstant.DEFAULT_DATE_PATTERN. This method is static so don't
+     * managed by spring.
      * <p>
      * The Date format using default active locale.</p>
      *
@@ -614,6 +616,46 @@ public class DateFormatter {
      */
     public Date getDayAndMonthWithActiveLocale(String stringDate, Locale locale) throws ParseException {
         return new SimpleDateFormat(dayAndMonthPattern, locale).parse(stringDate);
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        if (defaultLocale.equalsIgnoreCase("") || defaultLocale == null) {
+            throw new Exception("Mr. DHFR say :Property of defaultLocale can't be null."
+                    + " Please see and config common_util.properties");
+        }
+        if (datePattern.equalsIgnoreCase("") || defaultLocale == null) {
+            throw new Exception("Mr. DHFR saya :Property of datePattern can't be null. "
+                    + "Please see and config common_util.properties");
+        }
+        if (timePattern.equalsIgnoreCase("") || defaultLocale == null) {
+            throw new Exception("Mr. DHFR say :Property of timePattern can't be null."
+                    + " Please see and config common_util.properties");
+        }
+        if (monthPattern.equalsIgnoreCase("") || defaultLocale == null) {
+            throw new Exception("Mr. DHFR say :Property of monthPattern can't be null. "
+                    + "Please see and config common_util.properties");
+        }
+        if (yearPattern.equalsIgnoreCase("") || defaultLocale == null) {
+            throw new Exception("Mr. DHFR say :Property of yearPattern can't be null. "
+                    + "Please see and config common_util.properties");
+        }
+        if (dayPattern.equalsIgnoreCase("") || defaultLocale == null) {
+            throw new Exception("Mr. DHFR say :Property of dayPattern can't be null. "
+                    + "Please see and config common_util.properties");
+        }
+        if (dateFullPattern.equalsIgnoreCase("") || defaultLocale == null) {
+            throw new Exception("Mr. DHFR say :Property of dateFullPattern can't be null."
+                    + " Please see and config common_util.properties");
+        }
+        if (monthAndYearPattern.equalsIgnoreCase("") || defaultLocale == null) {
+            throw new Exception("Mr. DHFR say :Property of monthAndYearPattern can't be null. "
+                    + "Please see and config common_util.properties");
+        }
+        if (dayAndMonthPattern.equalsIgnoreCase("") || defaultLocale == null) {
+            throw new Exception("Mr. DHFR say :Property of dayAndMonthPattern can't be null. "
+                    + "Please see and config common_util.properties");
+        }
     }
 
 }

@@ -6,6 +6,7 @@
 package com.incubator.it.common;
 
 import com.incubator.it.common.util.CheckDigitLunh;
+import com.incubator.it.common.util.DateTimeUtil;
 import com.incubator.it.common.util.DecimalHexBinaryConverter;
 import com.incubator.it.common.util.RandomNumberUtil;
 import com.incubator.it.common.util.UUIDUtil;
@@ -24,17 +25,17 @@ public class DateTimeTester {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 //        try {
         // TODO code application logic here
-//        String tanggal = "01-01-2014";
-//
-//        Date date = null;
-//        try {
-//            date = new SimpleDateFormat("dd-MM-yyyy").parse(tanggal);
-//        } catch (ParseException ex) {
-//            Logger.getLogger(DateTimeTester.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+        String tanggal = "01-01-2015";
+
+        Date date = null;
+        try {
+            date = new SimpleDateFormat("dd-MM-yyyy").parse(tanggal);
+        } catch (ParseException ex) {
+            Logger.getLogger(DateTimeTester.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
 //        CheckDigit
 //        System.out.println("Nitlai taanggalnya " + DateTimeUtil.getTotalMonthDifference(date, new Date()));
@@ -79,6 +80,7 @@ public class DateTimeTester {
 //         System.out.println(sdfsdf);
          System.out.println(Integer.toBinaryString(100));
          System.out.println(DecimalHexBinaryConverter.decimalToBinary(100));
+           System.out.println(DateTimeUtil.getAge(date));
 //         System.out.println(UUIDUtil.getRandomDataEnd(10));
 //         System.out.println(sdfsdf.substring(2));
 //        System.out.println(UUIDUtil.getRandomDataBefore(-10));

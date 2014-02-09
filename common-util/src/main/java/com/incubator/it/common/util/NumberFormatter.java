@@ -8,6 +8,7 @@ import com.incubator.it.common.CommonUtilConstant;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
+import org.springframework.beans.factory.InitializingBean;
 
 /**
  * NumberFormatter, a class with function to format and parse from String type
@@ -31,11 +32,27 @@ import java.util.Locale;
  * @version 1
  * @since 14 January 2014
  */
-public class NumberFormatter {
+public class NumberFormatter implements InitializingBean {
 
     private Integer minFractionDigit;
     private Integer maxFractionDigit;
     private String defaultLocale;
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        if (minFractionDigit == null) {
+            throw new Exception("Mr. DHFR say :Property of minFractionDigit can't be null."
+                    + " Please see and config common_util.properties");
+        }
+        if (maxFractionDigit == null) {
+            throw new Exception("Mr. DHFR say :Property of maxFractionDigit can't be null."
+                    + " Please see and config common_util.properties");
+        }
+        if (defaultLocale.equalsIgnoreCase("") || defaultLocale == null) {
+            throw new Exception("Mr. DHFR say :Property of defaultLocale can't be null."
+                    + " Please see and config common_util.properties");
+        }
+    }
 
     public Integer getMinFractionDigit() {
         return minFractionDigit;
@@ -344,4 +361,5 @@ public class NumberFormatter {
         }
         return nf;
     }
+
 }

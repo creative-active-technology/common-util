@@ -32,7 +32,8 @@ public class RandomNumberUtil {
      */
     public static Integer getRandomBettween(int begin, int finish) {
         if (begin > finish) {
-            throw new IllegalArgumentException("Begin value must less than finish value");
+            
+            throw new IllegalArgumentException("Mr. DHFR say :Begin value must less than finish value");
         } else {
             return getRandomInt(finish - begin) + begin;
         }
@@ -47,7 +48,7 @@ public class RandomNumberUtil {
      */
     public static String getRandomNumber(Integer numberSize) {
         if (numberSize > 19) {
-            throw new IllegalArgumentException("Maximum digit is 19");
+            throw new IllegalArgumentException("Mr. DHFR say :maximum digit is 19");
         } else {
             return getRandomNumber().toString().substring(0, numberSize);
         }
