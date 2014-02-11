@@ -11,8 +11,10 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.joda.time.DateMidnight;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
+import org.joda.time.Minutes;
 import org.joda.time.Months;
 import org.joda.time.Years;
+import org.joda.time.Seconds;
 
 /**
  *
@@ -180,6 +182,28 @@ public class DateTimeUtil {
     }
 
     /**
+     * get total Minutes difference, between two date type
+     *
+     * @return Integer
+     * @param date1 Date reference
+     * @param date2 Date reference
+     */
+    public static Integer getTotalMinutes(Date date1, Date date2) {
+        return Minutes.minutesBetween(new DateMidnight(date1), new DateMidnight(date2)).getMinutes();
+    }
+
+    /**
+     * get total Second difference, between two date type
+     *
+     * @return Integer
+     * @param date1 Date reference
+     * @param date2 Date reference
+     */
+    public static Integer getTotalSeconds(Date date1, Date date2) {
+        return Seconds.secondsBetween(new DateMidnight(date1), new DateMidnight(date2)).getSeconds();
+    }
+
+    /**
      * get total working days
      *
      * @param startDate Date reference
@@ -240,7 +264,5 @@ public class DateTimeUtil {
             return totalSaturdayAndMonday;
         }
     }
-
-   
 
 }
