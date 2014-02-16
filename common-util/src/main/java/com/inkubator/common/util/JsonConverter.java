@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.incubator.it.common.util;
+package com.inkubator.common.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

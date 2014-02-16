@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.incubator.it.common.util;
+package com.inkubator.common.util;
 
-import com.incubator.it.common.CommonUtilConstant;
+import com.inkubator.common.CommonUtilConstant;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;

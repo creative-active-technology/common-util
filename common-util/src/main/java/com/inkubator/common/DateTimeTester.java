@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.incubator.it.common;
+package com.inkubator.common;
 
-import com.incubator.it.common.util.CheckDigitLunh;
-import com.incubator.it.common.util.DateTimeUtil;
-import com.incubator.it.common.util.DecimalHexBinaryConverter;
-import com.incubator.it.common.util.RandomNumberUtil;
-import com.incubator.it.common.util.UUIDUtil;
+import com.inkubator.common.util.CheckDigitLunh;
+import com.inkubator.common.util.DateTimeUtil;
+import com.inkubator.common.util.DecimalHexBinaryConverter;
+import com.inkubator.common.util.RandomNumberUtil;
+import com.inkubator.common.util.UUIDUtil;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
