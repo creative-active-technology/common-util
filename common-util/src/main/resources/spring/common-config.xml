@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
     <context:property-placeholder location="classpath*:common_util.properties" />
-    <bean id="dateFormatter" class="com.incubator.it.common.util.DateFormatter" lazy-init="true">
+    <bean id="dateFormatter" class="com.inkubator.common.util.DateFormatter" lazy-init="true">
         <property name="defaultLocale" value="${common.util.defaultLocale}"/>
         <property name="datePattern" value="${common.util.datePattern}"/>
         <property name="timePattern" value="${common.util.timePattern}"/>
@@ -20,13 +20,13 @@
         <property name="dayAndMonthPattern" value="${common.util.dayAndMonthPattern}"/>
     </bean>
     
-    <bean id="numberFormatter" class="com.incubator.it.common.util.NumberFormatter" lazy-init="true" >
+    <bean id="numberFormatter" class="com.inkubator.common.util.NumberFormatter" lazy-init="true" >
         <property name="defaultLocale" value="${common.util.defaultLocale}"/>
         <property name="minFractionDigit" value="${common.util.maxFractionDigit}"/>
         <property name="maxFractionDigit" value="${common.util.minFractionDigit}"/>
     </bean>
     
-    <bean id="jsonConverter" class="com.incubator.it.common.util.JsonConverter" lazy-init="true" >
+    <bean id="jsonConverter" class="com.inkubator.common.util.JsonConverter" lazy-init="true" >
         <property name="jsonPatternDateFormat" value="${common.util.dateFullPattern}"/>
     </bean>
      

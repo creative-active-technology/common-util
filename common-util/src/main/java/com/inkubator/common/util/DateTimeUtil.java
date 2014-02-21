@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.incubator.it.common.util;
+package com.inkubator.common.util;
 
-import com.incubator.it.common.CommonUtilConstant;
+import com.inkubator.common.CommonUtilConstant;
 import java.util.Date;
 import org.apache.commons.lang3.time.DateUtils;
 import org.joda.time.DateMidnight;

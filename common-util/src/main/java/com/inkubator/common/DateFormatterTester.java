@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 
-package com.incubator.it.common;
+package com.inkubator.common;
 
-import com.incubator.it.common.service.CommonUtilService;
-import com.incubator.it.common.util.DateFormatter;
-import com.incubator.it.common.util.DateTimeUtil;
+import com.inkubator.common.service.CommonUtilService;
+import com.inkubator.common.util.DateFormatter;
+import com.inkubator.common.util.DateTimeUtil;
 import java.util.Date;
 import java.util.Locale;
 
