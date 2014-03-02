@@ -126,24 +126,6 @@ public class DateFormatter implements InitializingBean {
     /**
      *
      * <p>
-     * Get Date and formated with default locale. Return value is string with
-     * default date pattern (dd-MMMM-yyyy). This date pattern is taken from
-     * CommonUtilConstant.DEFAULT_DATE_PATTERN. This method is static so don't
-     * managed by spring.
-     * <p>
-     * The Date format using default active locale.</p>
-     *
-     * @param datePattern
-     * @return String return value is string with pattern date dd-MMMM-yyyy
-     * @param date the date reference
-     */
-    public static String getDateAsStringsDefaultLocale(Date date, String datePattern) {
-        return new SimpleDateFormat(datePattern, Locale.getDefault()).format(date);
-    }
-
-    /**
-     *
-     * <p>
      * Get Date and formated with specific locale. The return value is string
      * with default date pattern (dd-MMMM-yyyy). We can inject locale form
      * session or any kind a way to retrieve locale </p>
@@ -658,4 +640,79 @@ public class DateFormatter implements InitializingBean {
         }
     }
 
+    /**
+     *
+     * <p>
+     * Get Date and formated with default locale. Return value is string with
+     * default date pattern (dd-MMMM-yyyy). This date pattern is taken from
+     * CommonUtilConstant.DEFAULT_DATE_PATTERN. This method is static so don't
+     * managed by spring.
+     * <p>
+     * The Date format using default active locale.</p>
+     *
+     * @param datePattern
+     * @return String return value is string with pattern date dd-MMMM-yyyy
+     * @param date the date reference
+     */
+    public static String getDateAsStringsDefaultLocale(Date date, String datePattern) {
+        return new SimpleDateFormat(datePattern, Locale.getDefault()).format(date);
+    }
+
+    /**
+     *
+     * <p>
+     * Get Date and formated with default locale. Return value is Date with
+     * default date pattern (dd-MMMM-yyyy). This date pattern is taken from
+     * CommonUtilConstant.DEFAULT_DATE_PATTERN. This method is static so don't
+     * managed by spring.
+     * <p>
+     * The Date format using default active locale.</p>
+     *
+     * @param datePattern
+     * @return String return value is string with pattern date dd-MMMM-yyyy
+     * @param inputDate the date reference
+     * @throws java.text.ParseException
+     */
+    public static Date getDateWithDefaultLocale(String inputDate, String datePattern) throws ParseException {
+        return new SimpleDateFormat(datePattern, Locale.getDefault()).parse(inputDate);
+    }
+
+    /**
+     *
+     * <p>
+     * Get Date and formated with active locale. Return value is string with
+     * default date pattern (dd-MMMM-yyyy). This date pattern is taken from
+     * CommonUtilConstant.DEFAULT_DATE_PATTERN. This method is static so don't
+     * managed by spring.
+     * <p>
+     * The Date format using active locale.</p>
+     *
+     * @param datePattern
+     * @param locale
+     * @return String return value is string with pattern date dd-MMMM-yyyy
+     * @param date the date reference
+     */
+    public static String getDateAsStringActiveLocale(Date date, String datePattern, Locale locale) {
+        return new SimpleDateFormat(datePattern, locale).format(date);
+    }
+
+    /**
+     *
+     * <p>
+     * Get Date and formated with active locale. Return value is Date with
+     * default date pattern (dd-MMMM-yyyy). This date pattern is taken from
+     * CommonUtilConstant.DEFAULT_DATE_PATTERN. This method is static so don't
+     * managed by spring.
+     * <p>
+     * The Date format using active locale.</p>
+     *
+     * @param date
+     * @param datePattern
+     * @param locale
+     * @return String return value is string with pattern date dd-MMMM-yyyy
+     * @throws java.text.ParseException
+     */
+    public static Date getDateWithActiveLocale(String date, String datePattern, Locale locale) throws ParseException {
+        return new SimpleDateFormat(datePattern, locale).parse(date);
+    }
 }
