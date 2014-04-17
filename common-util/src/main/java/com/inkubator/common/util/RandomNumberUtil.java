@@ -15,11 +15,11 @@ import java.util.Random;
  */
 public class RandomNumberUtil {
 
-    private static Long getRandomNumber() {
+    public static Long getRandomNumber() {
         return Math.abs(new Random().nextLong());
     }
 
-    private static Integer getRandomInt(int numberSize) {
+    public static Integer getRandomInt(int numberSize) {
         return new Random().nextInt(numberSize);
     }
 
