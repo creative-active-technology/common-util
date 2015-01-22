@@ -6,11 +6,14 @@
 package com.inkubator.common.util;
 
 import com.inkubator.common.CommonUtilConstant;
+
 import java.util.Date;
+
 import org.apache.commons.lang3.time.DateUtils;
 import org.joda.time.DateMidnight;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
+import org.joda.time.Hours;
 import org.joda.time.Minutes;
 import org.joda.time.Months;
 import org.joda.time.Years;
@@ -182,14 +185,25 @@ public class DateTimeUtil {
     }
 
     /**
+     * get total hours difference, between two date type
+     *
+     * @return Integer
+     * @param date1 Date reference
+     * @param date2 Date reference
+     */
+    public static Integer getTotalHoursDifference(Date date1, Date date2) {
+        return Hours.hoursBetween(new DateTime(date1), new DateTime(date2)).getHours();
+    }
+    
+    /**
      * get total Minutes difference, between two date type
      *
      * @return Integer
      * @param date1 Date reference
      * @param date2 Date reference
      */
-    public static Integer getTotalMinutes(Date date1, Date date2) {
-        return Minutes.minutesBetween(new DateMidnight(date1), new DateMidnight(date2)).getMinutes();
+    public static Integer getTotalMinutesDifference(Date date1, Date date2) {
+        return Minutes.minutesBetween(new DateTime(date1), new DateTime(date2)).getMinutes();
     }
 
     /**
@@ -199,8 +213,8 @@ public class DateTimeUtil {
      * @param date1 Date reference
      * @param date2 Date reference
      */
-    public static Integer getTotalSeconds(Date date1, Date date2) {
-        return Seconds.secondsBetween(new DateMidnight(date1), new DateMidnight(date2)).getSeconds();
+    public static Integer getTotalSecondsDifference(Date date1, Date date2) {
+        return Seconds.secondsBetween(new DateTime(date1), new DateTime(date2)).getSeconds();
     }
 
     /**
