@@ -269,7 +269,7 @@ public class DateTimeUtil {
             DateTime end = new DateTime(endDate);
             int totalSaturdayAndMonday = 0;
             DateTime iterate = start;
-            while (iterate.isBefore(end)) {
+            while (iterate.isBefore(end) | iterate.isEqual(end)) {
                 if (iterate.getDayOfWeek() == 6 | iterate.getDayOfWeek() == 7) {
                     ++totalSaturdayAndMonday;
                 }
