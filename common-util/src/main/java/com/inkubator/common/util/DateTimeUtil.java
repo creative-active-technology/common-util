@@ -30,7 +30,7 @@ import org.joda.time.Seconds;
  * @version 1
  * @since 14 January 2014
  */
-public class DateTimeUtil {
+public class DateTimeUtil extends DateUtils {
 
     /**
      *
